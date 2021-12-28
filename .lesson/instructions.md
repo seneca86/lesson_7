@@ -119,5 +119,95 @@ print(mathematicians)
 mathematicians += ['Feynman', 'Rutherford', 'Faraday']
 ```
 
-### Changing items
+### Change items
 
+Mutability of lists means that we can alter its content, typically through indexing. The following examples show the flexibility (and risks) that this brings.
+
+```python
+mathematicians[0] = 'Baudelaire'
+print(mathematicians)
+mathematicians[1:3] = ['Shakespeare', 'Milton']
+print(mathematicians)
+mathematicians[4:] = 'this'
+print(mathematicians)
+```
+
+### Delete items
+
+There are several ways to remove elements from a list: `del()` will delete them by offset, `remove()` will delete them by name, `pop()` will delete the last one (this is called _LIFO_ in operations and computer science jargon, for "last in first out", or _stack_), `pop(0)` will delete the first one (this is analogously called _FIFO_), etc.
+
+```python
+alkali = ['hydrogen', 'lithium', 'sodium', 'potassium', 'rubidium', 'caesium', 'francium']
+del alkali[0]
+print(alkali)
+alkali.remove('lithium')
+print(alkali)
+alkali.pop()
+print(alkali)
+alkali.pop(0)
+print(alkali)
+alkali.clear()
+print(alkali)
+```
+
+### Test for values and count occurences
+
+If we want to check whether an item is on a list, and its position (more precisely, the position of the first occurence), we may use `index()`.
+
+```python
+alkali = ['hydrogen', 'lithium', 'sodium', 'potassium', 'rubidium', 'caesium', 'francium']
+alkali.index('sodium')
+```
+
+However, it is more _pythonic_ to use `in`.
+
+```python
+'sodium' in alkali
+```
+
+Counting occurences is achieved with `count()`.
+
+```python
+word = 'abbcccddddeeeee'
+word.count('c')
+```
+
+### Convert a list to a string
+
+The opposite of the `split()` command is `join()`. Its syntax looks backwards, but it is actually consistent with that of `split()`. The advantage of this syntax (versus a hypothetical `list.join()`) is that it accepts any string or iterable sequence of strings as an input, and not just a list.
+
+```python
+noble_gases_string = 'helium, neon, argon, krypton, xenon, radon, oganesson'
+noble_gases_list = noble_gases_string.split(', ')
+print(noble_gases_list)
+separator = '...'
+separator.join(noble_gases_list)
+```
+
+### Sort the items in a list
+
+There are two ways to sort the elements in a list. One is the _method_ `sort()`, and the other is the _function_ `sorted()`. A method can be loosly described for now as a function that an object applies on itself, meaning the change will remain _in place_.
+
+```python
+gods = ['jupiter', 'apollo', 'juno', 'mars', 'vesta', 'neptune']
+sorted(gods)
+print(gods)
+gods.sort()
+print(gods)
+```
+
+Note that `sorted()` returns a copy of the object, but does not modify the object itself. This is an important distinction between methods and general functions that we will encounter more times down the road.
+
+`sort()` also works with numeric types and with reverse order.
+
+```python
+numbers = [1, -3, 10]
+numbers.sort()
+print(numbers)
+numbers.sort(reverse=True)
+print(numbers)
+```
+
+### Measure the length
+
+The length

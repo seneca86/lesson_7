@@ -62,4 +62,48 @@ mathematicians.extend(physicists)
 print(mathematicians)
 mathematicians += ['Feynman', 'Rutherford', 'Faraday']
 # %%
+mathematicians[0] = 'Baudelaire'
+print(mathematicians)
+mathematicians[1:3] = ['Shakespeare', 'Milton']
+print(mathematicians)
+mathematicians[4:] = 'this'
+print(mathematicians)
+# %%
+alkali = ['hydrogen', 'lithium', 'sodium', 'potassium', 'rubidium', 'caesium', 'francium']
+del alkali[0]
+print(alkali)
+alkali.remove('lithium')
+print(alkali)
+alkali.pop()
+print(alkali)
+alkali.pop(0)
+print(alkali)
+alkali.clear()
+print(alkali)
+# %%
+alkali = ['hydrogen', 'lithium', 'sodium', 'potassium', 'rubidium', 'caesium', 'francium']
+alkali.index('sodium')
+'sodium' in alkali
+# %%
+word = 'abbcccddddeeeee'
+word.count('c')
+# %%
+noble_gases_string = 'helium, neon, argon, krypton, xenon, radon, oganesson'
+noble_gases_list = noble_gases_string.split(', ')
+print(noble_gases_list)
+separator = '...'
+separator.join(noble_gases_list)
 
+# %%
+gods = ['jupiter', 'apollo', 'juno', 'mars', 'vesta', 'neptune']
+sorted(gods)
+print(gods)
+gods.sort()
+print(gods)
+# %%
+numbers = [1, -3, 10]
+numbers.sort()
+print(numbers)
+numbers.sort(reverse=True)
+print(numbers)
+# %%
