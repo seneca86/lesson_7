@@ -62,3 +62,62 @@ t2 > t1
 
 ## Lists
 
+Lists are similar to `tuples` but mutable, which means we can add, delete, or replace elements. Also, the same value can occur more than once in a list, but not in a tuple. Lists are defined with the `list()` functions or with the `[]`.
+
+
+```python
+human_needs = ['security', 'well-being', 'belonging', 'recognition', 'control']
+human_needs = list(('security', 'well-being', 'belonging', 'recognition', 'control'))
+list('dog')
+```
+
+Lists can also be created from strings with `split()`, which takes a separator as optional parameter.
+
+```python
+question = 'what might be done?, what is wrong?'
+question.split()
+question.split('?')
+question.split(',')
+```
+
+### Slicing
+
+As in strings or tuples, single values are extracted by specifying the offset. Multiple values are specified according to the convention `start:end:step`.
+
+```python
+contract = ['terms', 'conditions', 'prices', 'dates', 'numbers', 'liabilities']
+contract[1]
+contract[0]
+contract[-1]
+contract[1::2]
+contract[-1:1:-1]
+contract
+contract.reverse()
+contract
+```
+
+Note that the list is not changed until we use `list.reverse()`.
+
+### Add and duplicate items
+
+`append()` is the traditional way of adding items to the end of a list. If we want to insert an element in a specific position, we can use `insert()`. If we want to duplicate items, we may use the `*` operator.
+
+```python
+mathematicians = ['Gauss', 'Euler', 'Euclid', 'Fermat', 'Leibniz', 'Pythagoras', 'Ramanujan', 'Poincaré']
+mathematicians.append('Galois')
+mathematicians.insert(3, 'Von Neumann')
+print(mathematicians)
+['Gauss'] * 3
+```
+
+`extend()` serves to merge one list into another, similarly to `+`.
+
+```python
+physicists = ['Einstein', 'Newton', 'Maxwell', 'Dirac']
+mathematicians.extend(physicists)
+print(mathematicians)
+mathematicians += ['Feynman', 'Rutherford', 'Faraday']
+```
+
+### Changing items
+
