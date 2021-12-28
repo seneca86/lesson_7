@@ -210,4 +210,74 @@ print(numbers)
 
 ### Measure the length
 
-The length
+The length of a list (i.e. the number of items in it) is obtained with the `len()` operator:
+
+```python
+list_ = ['a', 'b', 'b']
+len(list_)
+```
+
+Note how we used `list_` as a name for a dummy list as a way to avoid conflation with a keyword with no need to be particularly original.
+
+### Assign and copy
+
+Remember that variables are names (i.e. tags) that we associate with an object. If we label an object with two tags, and we change the content of the object, both tags will point to the changed object. This seems reasonable but may surprise you in practice.
+
+```python
+l1 = [10, 20, 30]
+l2 = l1
+l1[0] = 40
+print(l2)
+```
+
+So, what should we do if we want an independent, fresh list? We have three options: the `copy()` method, the `list()` function, and the slice `[:]`.
+
+```python
+l1 = [10, 20, 30]
+l2 = list(l1)
+l3 = l1.copy()
+l4 = l1[:]
+l5 = l1
+l1[0] = 'new'
+print(l1)
+print(l2)
+print(l3)
+print(l4)
+print(l5)
+```
+
+There is a caveat, though. Since lists are mutable, a list may contain another list that may change, and that change would pass under the radar of the `copy()`, `list()` and `[:]` copies that we generated. To avoid this situation we can use `deepcopy()`, which is part of the `copy` package.
+
+```python
+import copy
+l1 = ['a', 'b', [1, 2]]
+l2 = l1.copy()
+l3 = l1[:]
+l4 = l1
+l5 = copy.deepcopy(l1)
+l1[-1][0] = 'hidden change'
+print(l2)
+print(l3)
+print(l4)
+print(l5)
+```
+
+### Compare lists
+
+List comparison is executed comparing element by element. In case of tie, the number of elements is used to untie.
+
+```python
+t1 = (2,2,2)
+t2 = (1,1,1,1)
+print(t2 < t1)
+l1 = [2, 2, 2]
+l2 = [1, 1, 1, 1]
+print(l2 < l1)
+l3 = [2, 2, 2, 2]
+print(l1 < l3)
+```
+
+### Iterate over a list
+
+Iterating over a list is similar to iterating over a tuple, with similar uses of `break`, `continue`, and `else`.
+

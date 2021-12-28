@@ -107,3 +107,46 @@ print(numbers)
 numbers.sort(reverse=True)
 print(numbers)
 # %%
+list_ = ['a', 'b', 'b']
+len(list_)
+# %%
+l1 = [10, 20, 30]
+l2 = l1
+l1[0] = 40
+print(l2)
+
+# %%
+l1 = [10, 20, 30]
+l2 = list(l1)
+l3 = l1.copy()
+l4 = l1[:]
+l5 = l1
+l1[0] = 'new'
+print(l1)
+print(l2)
+print(l3)
+print(l4)
+print(l5)
+# %%
+import copy
+l1 = ['a', 'b', [1, 2]]
+l2 = l1.copy()
+l3 = l1[:]
+l4 = l1
+l5 = copy.deepcopy(l1)
+l1[-1][0] = 'hidden change'
+print(l2)
+print(l3)
+print(l4)
+print(l5)
+# %%
+
+t1 = (2,2,2)
+t2 = (1,1,1,1)
+print(t2 < t1)
+l1 = [2, 2, 2]
+l2 = [1, 1, 1, 1]
+print(l2 < l1)
+l3 = [2, 2, 2, 2]
+print(l1 < l3)
+# %%
