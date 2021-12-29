@@ -187,3 +187,23 @@ print(number_list)
 list(range(10, 20))
 # %%
 number_list = [number for number in range(10, 20)]
+
+# %%
+squared_odds = [n**2 for n in range(0,10) if n%2 !=0]
+# %%
+body = ['sedan', 'suv', 'pickup', 'limo']
+color = ['blue', 'red', 'white']
+model = [(b, c) for b in body for c in color]
+print(model)
+# %%
+bedroom = ['chair', 'desk', 'bed']
+kitchen = ['fridge', 'stove', 'oven']
+living_room = ['sofa', 'coffee table', 'tv']
+house = [bedroom, kitchen, living_room]
+print(house)
+house[0][1]
+house[-1][2]
+# %%
+tuple_comprehension = (n for n in range(0,10))
+tuple_comprehension
+# %%

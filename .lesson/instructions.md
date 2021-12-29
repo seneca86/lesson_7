@@ -348,3 +348,49 @@ A more _pythonic_ way to do this is to use a _list comprehension_, which has the
 number_list = [number for number in range(10, 20)]
 ```
 
+The power of this approach is that is allows to include expressions and conditional statements into the definition. e.g. we may want to have a list with squared numbers of odd numbers.
+
+```python
+squared_odds = [n**2 for n in range(0,10) if n%2 !=0]
+```
+
+Finally, we can use list comprehensions to build _cartesian products_, which are sets of all ordered pairs of elements in two lists.
+
+```python
+body = ['sedan', 'suv', 'pickup', 'limo']
+color = ['blue', 'red', 'white']
+model = [(b, c) for b in body for c in color]
+print(model)
+```
+
+### Embed lists
+
+Lists can contain elements of different types, including other lists. The way to access those elements in through one or more indexes.
+
+```python
+bedroom = ['chair', 'desk', 'bed']
+kitchen = ['fridge', 'stove', 'oven']
+living_room = ['sofa', 'coffee table', 'tv']
+house = [bedroom, kitchen, living_room]
+print(house)
+house[0][1]
+house[-1][2]
+```
+
+## Lists versus tuples
+
+You may want to try "tuple comprehension", but unfortunately there is no such thing and the expression will generate a _generator_ instead (we will cover those laterly):
+
+```python
+tuple_comprehension = (n for n in range(0,10))
+tuple_comprehension
+```
+
+So, why not forget about tuples and use just lists? Tuple do have a number of advantages, namely:
+
+- They consume less memory
+- They are immutable, which is a good property in certain contexts
+- They are useful to generate dictionaries (more on this later)
+- They have a useful close cousing called _named tuples_, which we will cover later
+
+And, more generally, one must use the simplest structure whenever possible, and tuples are amongs the simplest structures in Python.
