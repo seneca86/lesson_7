@@ -150,3 +150,40 @@ print(l2 < l1)
 l3 = [2, 2, 2, 2]
 print(l1 < l3)
 # %%
+games = ['chess', 'go', 'checkers', 'backgammon', 'othello', 'bridge', 'pocker']
+for g in games:
+    if g.startswith('c'):
+        print('skipped a game starting with c')
+        continue
+    elif g.endswith('e'):
+        print('abort because a game ends with e')
+        break
+    print(f'{g=}')
+else:
+    print('completed the loop without any game starting with e')
+# %%
+animals = ['dog', 'cat', 'bird', 'cow', 'frog']
+sound = ['woof', 'meow', 'tweet', 'moo', 'croak']
+for a, s in zip(animals, sound):
+    print(a, 'goes', s)
+# %%
+list(zip(animals, sound))
+dict(zip(animals, sound))
+# %%
+salad = []
+salad.append('tomato')
+salad.append('olive oil')
+salad.append('lettuce')
+salad.append('cheese')
+salad.append('vinegar')
+print(salad)
+# %%
+number_list = []
+for number in range(10,20):
+    number_list.append(number)
+print(number_list)
+
+# %%
+list(range(10, 20))
+# %%
+number_list = [number for number in range(10, 20)]

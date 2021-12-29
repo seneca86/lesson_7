@@ -281,3 +281,70 @@ print(l1 < l3)
 
 Iterating over a list is similar to iterating over a tuple, with similar uses of `break`, `continue`, and `else`.
 
+```python
+games = ['chess', 'go', 'checkers', 'backgammon', 'othello', 'bridge', 'pocker']
+for g in games:
+    if g.startswith('c'):
+        print('skipped a game starting with c')
+        continue
+    elif g.endswith('e'):
+        print('abort because a game ends with e')
+        break
+    print(f'{g=}')
+else:
+    print('completed the loop without any game starting with e')
+```
+
+The `else` clause gets control when the `for` loop is completed without a `break` or when the initial `for` does not run at all (e.g. if the list is empty).
+
+### Iterate over multiple sequences
+
+The `zip()` function provides a nice trick to iterate over multiple sequences in parallel.
+
+```python
+animals = ['dog', 'cat', 'bird', 'cow', 'frog']
+sound = ['woof', 'meow', 'tweet', 'moo', 'croak']
+for a, s in zip(animals, sound):
+    print(a, 'goes', s)
+```
+
+In the next chapter we will see how to create a dictionary that captures the correspondence between those two lists. Alternatively, we can also use the `zip()` command to pair the lists:
+
+```python
+list(zip(animals, sound))
+dict(zip(animals, sound))
+```
+
+### Create a list with list comprehension
+
+The `append()` method of adding elements to a list is slow even if we place it inside a loop.
+
+```python
+salad = []
+salad.append('tomato')
+salad.append('olive oil')
+salad.append('lettuce')
+salad.append('cheese')
+salad.append('vinegar')
+print(salad)
+```
+
+```python
+number_list = []
+for number in range(10,20):
+    number_list.append(number)
+print(number_list)
+```
+
+The `list()` command also works in combination with `range()`.
+
+```python
+list(range(10, 20))
+```
+
+A more _pythonic_ way to do this is to use a _list comprehension_, which has the general form `[expression for item in iterable]`.
+
+```python
+number_list = [number for number in range(10, 20)]
+```
+
