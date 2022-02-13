@@ -42,13 +42,7 @@ tuple_materials * 2
 
 Tuples are immutable, as said before, so when we appear to modify a tuple as in next example we are actually creating a new one, as we can check with the `id()` command.
 
-```python
-t1 = (1,2,3)
-t2 = (1,1,1,1)
-t1 > t2
-t2 > t1
-(1,1,1) < (2,2,2)
-```
+** Try it yourself **
 
 Tuples can be compared, and the comparison only evaluates to `True` if it is so elementwise.
 
