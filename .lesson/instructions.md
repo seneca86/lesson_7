@@ -180,7 +180,7 @@ separator.join(noble_gases_list)
 
 ### Sort the items in a list
 
-There are two ways to sort the elements in a list. One is the _method_ `sort()`, and the other is the _function_ `sorted()`. A method can be loosly described for now as a function that an object applies on itself, meaning the change will remain _in place_.
+There are two ways to sort the elements in a list. One is the _method_ `sort()`, and the other is the _function_ `sorted()`. A method can be loosely described for now as a function that an object applies on itself, meaning the change will remain _in place_.
 
 ```python
 gods = ['jupiter', 'apollo', 'juno', 'mars', 'vesta', 'neptune']
