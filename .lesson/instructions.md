@@ -373,7 +373,7 @@ house[-1][2]
 
 ## Lists versus tuples
 
-You may want to try "tuple comprehension", but unfortunately there is no such thing and the expression will generate a _generator_ instead (we will cover those laterly):
+You may want to try "tuple comprehension", but unfortunately there is no such thing and the expression will generate a _generator_ instead (we will cover those later):
 
 ```python
 tuple_comprehension = (n for n in range(0,10))
