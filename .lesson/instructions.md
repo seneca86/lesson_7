@@ -2,7 +2,7 @@
 
 ## Introduction
 
-We have already encountered _tuples_ and _lists_ in the previous examples. They are sequence structured that combine elements of the same or different type. The main difference between them is that tuples are immutables whereas lists are mutable, with mutability being the capacity to add or subtract elements.
+We have already encountered _tuples_ and _lists_ in the previous examples. They are structured sequences that combine elements of the same or different type. The main difference between them is that tuples are immutables whereas lists are mutable, with mutability being the capacity to add or subtract elements.
 
 ## Tuples
 
